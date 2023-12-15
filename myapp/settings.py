@@ -129,3 +129,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# mssql
+DATABASES = {
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'django',
+        'USER': 'sa',
+        'PASSWORD': '1234',
+        'HOST': 'DESKTOP-UBKMH4B',
+        'PORT': '',
+
+        'OPTIONS': {
+                'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
+}

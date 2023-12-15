@@ -10,12 +10,6 @@ class Tag(models.Model):
 
 class TaggedItem(models.Model):
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
-    contentType = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    objectId = models.PositiveIntegerField()
-    contentObject = GenericForeignKey()
-
-class LikedItems(models.Model):
-    user =models.ForeignKey(User, on_delete=models.CASCADE)
-    contentType = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    objectId = models.PositiveIntegerField()
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
     contentObject = GenericForeignKey()
