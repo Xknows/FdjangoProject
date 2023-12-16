@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from store.models import Product
 
-def sayHello(request):
-    return HttpResponse("hello")
 
-def sayBay(request):
-    return render(request, 'hello.html')
+def sayHi(request):
+    # someThingForTest = Product.objects.filter(unitPrice__range=(0,10))
+    # someThingForTest = Product.objects.filter(title__istartswith='Coffee')
+    someThingForTest = Product.objects.filter(lastUpdate__year=2021)
+    return render(request, 'hello.html',{'products':list(someThingForTest)})
