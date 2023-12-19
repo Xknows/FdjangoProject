@@ -22,5 +22,7 @@ def sayHi(request):
     ## better way: because of less queries means just query to related tables
     someThingForTest = Product.objects.select_related('collection')
     
+    ## query to get 5 last customers first name and their order item id
+    someThingForTest = Order.objects.select_related('customer').prefetch_related('orderitem_set__product').order_by('-placedAt')[:5]
 
-    return render(request, 'hello.html', {'products': list(someThingForTest)})
+    return render(request, 'hello.html', {'orders': list(someThingForTest)})

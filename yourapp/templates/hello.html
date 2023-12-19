@@ -11,8 +11,8 @@
 <body>
 
     <ul>
-        {% for product in products %}
-        <li>{{ product.title}}-{{product.collection.title}}</li>
+        {% for order in orders %}
+        <li>{{ order.id}}-{{order.customer.firstName}}</li>
         {% endfor %}
     </ul>
 </body>
