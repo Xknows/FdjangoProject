@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=254, unique=True)),
                 ('phone', models.CharField(max_length=255)),
                 ('birthDate', models.DateField(null=True)),
-                ('memberhip', models.CharField(choices=[('B', 'bronze'), ('S', 'Silver'), ('G', 'Gold')], default='B', max_length=1)),
+                ('membership', models.CharField(choices=[('B', 'bronze'), ('S', 'Silver'), ('G', 'Gold')], default='B', max_length=1)),
             ],
         ),
         migrations.CreateModel(
